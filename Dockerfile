@@ -80,7 +80,6 @@ RUN a2ensite default-ssl.conf
 
 # Setup MySQL, bind on all addresses.
 RUN sed -i -e 's/^bind-address\s*=\s*127.0.0.1/#bind-address = 127.0.0.1/' /etc/mysql/my.cnf
-RUN mysql -e "UPDATE mysql.user SET Password = PASSWORD('CHANGEME') WHERE User = 'root'"
 
 # Setup SSH.
 #RUN echo 'root:root' | chpasswd
